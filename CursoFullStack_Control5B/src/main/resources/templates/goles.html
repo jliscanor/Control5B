@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Control 5 - B - Goles</title>
+<link href="/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+<link href="/css/bootstrap-table.scss" rel="stylesheet" th:href="@{/css/bootstrap-table.scss}"/>
+<link href="/css/globalstyle.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery-3.5.1.js"></script>
+<script src="/js/goles.js"></script>
+
+
+</head>
+<body>
+			<div class="btn-group">
+               	<button type="button" class="btn btn-primary btn-sm" onclick="javascript:GolesController('list')">Listar</button>
+               	<button type="button" class="btn btn-primary btn-sm" onclick="javascript:GolesController('get')">Buscar</button>
+           		<button type="button" class="btn btn-primary btn-sm" onclick="javascript:GolesController('insert')">Nuevo</button>
+           		<button type="button" class="btn btn-primary btn-sm" onclick="javascript:GolesController('update')">Grabar</button>
+           		<button type="button" class="btn btn-primary btn-sm" onclick="javascript:GolesController('delete')">Eliminar</button>
+            </div>
+   			<p>
+   			<div class="alert alert-danger" id="msg" hidden="true"></div>
+      			<div class="input-group">
+  					<span class="input-group-addon">RUT Jugador</span>
+  					<input id="jug_rut" type="text" class="form-control" name="jug_rut">
+				</div>
+				<p>
+				<div class="input-group">
+  					<span class="input-group-addon">Cantidad de Goles</span>
+  					<input id="gol_cantidad" type="text" class="form-control" name="gol_cantidad">
+				</div>
+ 				<div id="goles"></div>
+ 				
+ 	<!-- Modal -->
+	<div id="myModal" class="modal fade"  role="dialog">
+  		<div class="modal-dialog">
+    	<!-- Modal content-->
+    	<div class="modal-content">
+      		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal">Cerrar</button>
+        		<h4 class="modal-title">Lista de Goles</h4>
+      		</div>
+      		<div class="modal-body">
+      			<div class="table-responsive" style='height:100%' id='tableDivContainer'>
+      				<table class="table table-condensed" id='golesTable' data-toggle="table" data-height="299">
+		        	<thead><tr>
+						<th data-field="jug_rut">Jugador RUT</th>
+						<th data-field="gol_cantidad">Cantidad de goles</th>
+					</tr>
+		        	</thead>
+		        	</table>
+		        </div>
+	      	</div>
+      		<div class="modal-footer">
+        		<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      		</div>
+    	</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/js/bootstrap-table.js"></script>
+</body>
+</html>
